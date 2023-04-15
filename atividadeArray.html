@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades usando Array</title>
+</head>
+<body>
+    <h1>Biblioteca da Programação</h1>
+    <p>Usuário: <span id = "usuarioo"></span></p>
+    <p>Livro da escolha do usuário: <span id = "livroo"></span></p>
+    <p>Data do Empréstimo: <span id = "dataemp"></span></p>
+    <p>Data da Devolução: <span id = "datadev"></span></p>
+    <script>
+        function datahoje() {
+            let dataAgora = Date.now();
+            dataAgora = new Date (dataAgora);
+            let dia = dataAgora.getDate();
+            let mes = dataAgora.getMonth() +1;
+            let ano = dataAgora.getFullYear();
+
+            return dia + "/" + mes + "/" + ano;            
+        }
+        function datadevolucao() {
+            let datadevo = Date.now();
+            datadevo = new Date (datadevo);
+            let diaa = datadevo.getDate()+15;
+            let mess = datadevo.getMonth() +1;
+            let anoo = datadevo.getFullYear();
+
+            return dia + "/" + mes + "/" + ano;
+        }
+        
+        const usuarios = ["João", "Pedro", "Matheus", "Sofia"];
+        const livros = ["Pinoquio", "Senhor dos Anéis", "O Pequeno Príncipe"];
+
+        let usuarioID = Number (prompt("Digite o seu código."))-1;
+        let livrosID = Number (prompt("Oi, " + usuarios[usuarioID]
+        + "\n Escolha um livro para empréstimo, para escolher, digite o número ao lado do livro que você gostaria de pegar por empréstimo." 
+        + "\n 1 - " + livros[0]
+        + "\n 2 - " + livros[1]
+        + "\n 3 - " + livros[2]
+        ))-1;
+        document.getElementById("usuarioo").innerHTML = usuarios[usuarioID];
+        document.getElementById("livroo").innerHTML = livros[livrosID];
+        document.getElementById("dataemp").innerHTML = datahoje();
+        document.getElementById("datadev").innerHTML = datadevolucao();
+
+    
+    </script>
+    
+</body>
+</html>
